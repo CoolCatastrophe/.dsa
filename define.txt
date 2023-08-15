@@ -1,0 +1,19 @@
+Data structures in Python are ways to organize and store data efficiently in a computer program. 
+Here are simple explanations of common data structures with examples:
+
+1. Lists: 
+    A collection of elements that can be of any type, stored in a specific order. Example: [1, 2, 3, 4].
+
+2. Tuples: 
+    Similar to lists, but immutable, meaning their values cannot be changed once defined. Example: (5, "apple", True).
+
+3. Sets: 
+        A collection of unique elements without any specific order. Example: {1, 2, 3}.
+
+4. Dictionaries: 
+    Key-value pairs where each value is associated with a unique key. Example: {"name": "John", "age": 25}.
+
+5. Strings: 
+    A sequence of characters used to represent text. Example: "Hello, world!".
+
+These simple data structures help manipulate, store, and retrieve data effectively in Python programs.
