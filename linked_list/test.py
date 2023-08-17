@@ -8,32 +8,23 @@ class Linked_list:
     def __init__(self):
         self.head = None
 
-    def print(self):
-        if self.head is None:
-            print("Empty List")
-            return
-        itr = self.head
-        while itr:
-            print(f"-->{itr.data}", end="")
-            itr = itr.next
-        print()
+    def insert_at_begining(self, value):
+        node = Node(value, self.head)
+        self.head = node
 
     def get_length(self):
+        if self.head is None:
+            return 0
         count = 0
         itr = self.head
         while itr:
             itr = itr.next
-            count = count + 1
+            count += 1
         return count
 
-    def insert_values(self, l):
-        self.head = None
-        for i in l:
-            self.insert_at_end(i)
-
-    def insert_at_begining(self, value):
-        node = Node(value, self.head)
-        self.head = node
+    def insert_list(self, lst):
+        for item in lst:
+            self.insert_at_begining(item)
 
     def insert_at_end(self, value):
         if self.head is None:
@@ -44,9 +35,17 @@ class Linked_list:
             itr = itr.next
         itr.next = Node(value, None)
 
-    def insert_at(self, index, value):
+    def print(self):
+        if self.head is None:
+            return
+        itr = self.head
+        while itr:
+            print(f"-->{itr.data}", end=" ")
+            itr = itr.next
+        print()
+
+    def insert_at_index(self, index, value):
         if index < 0 or index > self.get_length():
-            print("Invalid Index :(")
             return
         if index == 0:
             self.insert_at_begining(value)
@@ -62,26 +61,21 @@ class Linked_list:
             itr = itr.next
             count += 1
 
-    def remove_at(self, index):
-        if index < 0 or index >= self.get_length():
-            print("Invalid Index :(")
+    def remove_at_index(self, index):
+        if index < 0 or index > self.get_length() - 1:
             return
         if index == 0:
             self.head = self.head.next
-            return
-        count = 0
         itr = self.head
+        count = 0
         while itr:
-            if count == index - 1:
+            if index - 1 == count:
                 itr.next = itr.next.next
                 break
-
             count += 1
             itr = itr.next
 
     def insert_after_value(self, data, value):
-        if self.head is None:
-            return
         itr = self.head
         while itr:
             if itr.data == data:
@@ -104,7 +98,7 @@ class Linked_list:
 
 
 ll = Linked_list()
-ll.insert_values(["banana", "mango", "grapes", "orange"])
+ll.insert_list(["banana", "mango", "grapes", "orange"])
 ll.print()
 ll.insert_after_value("mango", "apple")  # insert apple after mango
 ll.print()
