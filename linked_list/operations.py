@@ -57,6 +57,7 @@ class Linked_list:
             return
         if index == 0:
             self.at_begining(value)
+            return
         count = 0
         itr = self.head
         while itr:

@@ -50,8 +50,10 @@ class Linked_list:
             return
         if index == 0:
             self.insert_at_begining(value)
+            return
         if index == self.get_length() - 1:
             self.insert_at_end(value)
+            return
         count = 0
         itr = self.head
         while itr:
@@ -95,6 +97,7 @@ class Linked_list:
             return
         if self.head.data == value:
             self.head = self.head.next
+            return
         itr = self.head
         while itr and itr.next:
             if itr.next.data == value:
