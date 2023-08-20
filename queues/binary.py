@@ -36,7 +36,7 @@ class Queue:
 def generate_binary_numbers(n):
     q = Queue()
     q.enqueue("1")
-
+    print("0")
     for _ in range(n):
         front = q.front()
         print(front)
@@ -46,7 +46,7 @@ def generate_binary_numbers(n):
 
 
 t = time.time()
-n = 200
+n = 20
 if __name__ == "__main__":
-    generate_binary_numbers(200)
+    generate_binary_numbers(20)
 print(f"Generating {n} Numbers took {time.time()-t} seconds")
